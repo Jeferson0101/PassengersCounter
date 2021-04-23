@@ -1,0 +1,57 @@
+ CREATE TABLE Bus(
+  	identifier int primary key not null,
+ 	seats int,
+  	passengersLimit int,
+  	coordinates geometry,
+ 	occupation int
+ )
+
+insert into Bus(identifier, seats, passengersLimit,
+	coordinates, occupation) values (
+	123456789, 40, 20,
+	ST_MakePoint(-50.326761, -27.814646),
+	5
+);
+
+ insert into Bus(identifier, seats, passengersLimit, coordinates, occupation) values (
+ 	548796532,
+ 	40,
+ 	20,
+ 	ST_MakePoint(-50.320854, -27.810552),
+ 	25
+ );
+
+ insert into Bus(identifier, seats, passengersLimit, coordinates, occupation) values (
+ 	458213654,
+ 	40,
+ 	20,
+ 	ST_MakePoint(-50.331787, -27.817835),
+ 	22
+ )
+
+ insert into Bus(identifier, seats, passengersLimit, coordinates, occupation) values (
+ 	325641258,
+ 	40,
+ 	20,
+ 	ST_MakePoint(-50.317985, -27.821693),
+ 	10
+ );
+
+ insert into Bus(identifier, seats, passengersLimit, coordinates, occupation) values (
+ 	458789654,
+ 	40,
+ 	20,
+ 	ST_MakePoint(-50.324283, -27.816925),
+ 	7
+ );
+
+
+select occupation from Bus where identifier = 123456789;
+update Bus set occupation = occupation + 1 where identifier = 123456789;
+
+SELECT ST_AsText(coordinates) 
+    FROM Bus where identifier = 1;
+
+SELECT identifier, seats, passengersLimit, ST_AsText(coordinates), occupation from Bus;
+
+SELECT passengersQtd from Bus where coordinates = ST_MakePoint(-27.814646, -50.326761);
