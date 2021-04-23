@@ -30,7 +30,7 @@ export class AppComponent implements AfterViewInit{
       take(1),
     ).subscribe((response) => {
       let loader = new Loader({
-        apiKey: 'AIzaSyDphkj5RATRzmQr7eG4u9Em5egdeM3nwKc'
+        apiKey: 'Sua Chave da API'
       })
   
       loader.load().then(() => {
